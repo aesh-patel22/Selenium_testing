@@ -136,9 +136,9 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 
 #error-msg{
 margin-top:10px;
-color:red;
 font-size:13px;
 text-align:center;
+font-weight:500;
 }
 
 /* footer */
@@ -194,23 +194,26 @@ New user? <a href="#">Create account</a>
 
 <script>
 
-document.getElementById("loginForm").addEventListener("submit",function(e){
-
-e.preventDefault()
-
-let user=document.getElementById("username").value
-let pass=document.getElementById("password").value
-
-if(user==="testuser" && pass==="test123"){
-alert("Login Successful")
-}
-else{
-document.getElementById("error-msg").innerText="Invalid Username or Password"
-}
-
-})
-
-</script>
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+    
+    e.preventDefault()
+    
+    let user = document.getElementById("username").value
+    let pass = document.getElementById("password").value
+    let msg = document.getElementById("error-msg")
+    
+    if(user === "testuser" && pass === "test123"){
+        msg.style.color = "green"
+        msg.innerText = "Login Successful"
+    }
+    else{
+        msg.style.color = "red"
+        msg.innerText = "Invalid Username or Password"
+    }
+    
+    })
+    
+    </script>
 
 </body>
 </html>
